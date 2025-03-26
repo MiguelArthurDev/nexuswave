@@ -1,0 +1,30 @@
+{
+  "name": "nexuswave",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "format": "prettier --write \"**/*.{js,ts,json,astro,css}\""
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.2.5",
+    "@tailwindcss/vite": "^4.0.16",
+    "astro": "^5.5.4",
+    "tailwindcss": "^4.0.16"
+  },
+  "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
+    "prettier": "^3.5.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.11"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp"
+    ]
+  }
+}
