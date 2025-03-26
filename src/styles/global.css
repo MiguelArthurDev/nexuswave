@@ -2,4 +2,47 @@
 
 @theme {
   --font-sans: "Inter Variable", sans-serif;
+
+  --color-brand-50: #effaff;
+  --color-brand-100: #def4ff;
+  --color-brand-200: #b6ebff;
+  --color-brand-300: #75deff;
+  --color-brand-400: #2ccfff;
+  --color-brand-500: #00bfff;
+  --color-brand-600: #0095d4;
+  --color-brand-700: #0076ab;
+  --color-brand-800: #00638d;
+  --color-brand-900: #065374;
+  --color-brand-950: #04344d;
+}
+
+@utility container {
+  @apply mx-auto px-6;
+}
+
+/* Estilização personalizada da barra de rolagem */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-brand-50);
+  border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-400);
+  border-radius: 12px;
+  transition: background 0.2s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-600);
+}
+
+/* Para Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-brand-400) var(--color-brand-50);
 }

@@ -1,9 +1,331 @@
 ---
+import {
+  ArrowRight,
+  CheckCircle2,
+  Globe2,
+  MessageSquare,
+  Rocket,
+  User,
+  Users2,
+} from "lucide-react";
+
 import Layout from "~/components/layout.astro";
 ---
 
 <Layout>
-  <main class="grid h-full place-items-center">
-    <h1 class="text-4xl">Nexus Wave</h1>
-  </main>
+  {/* Seção Hero */}
+  <header role="banner" class="relative overflow-hidden">
+    <nav aria-label="Navegação principal" class="container py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <Globe2 aria-hidden="true" className="size-8 text-brand-500" />
+          <span class="text-2xl font-bold text-gray-900">NexusWave</span>
+        </div>
+        <a
+          href="https://wa.me/qr/3DS7V7J4Z32YF1"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Entre em contato conosco via WhatsApp"
+          class="hidden rounded-full bg-brand-500 px-6 py-2 text-white transition md:inline-block lg:hover:bg-brand-400"
+        >
+          Fale conosco
+        </a>
+      </div>
+    </nav>
+
+    <div class="container py-20 text-center">
+      <h1 class="mb-8 text-5xl font-bold text-gray-900 md:text-6xl">
+        Transforme Sua Presença Digital
+      </h1>
+      <p class="mx-auto mb-12 max-w-2xl text-xl text-gray-600">
+        Criamos soluções digitais inovadoras que ajudam empresas a crescer e ter
+        sucesso no mundo moderno.
+      </p>
+      <div
+        role="group"
+        aria-label="Opções principais"
+        class="flex flex-col justify-center gap-4 sm:flex-row"
+      >
+        <a
+          href="https://wa.me/qr/3DS7V7J4Z32YF1"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Entre em contato conosco via WhatsApp"
+          class="group flex items-center gap-2 rounded-full bg-brand-500 px-8 py-4 text-white transition lg:hover:bg-brand-400"
+        >
+          Entre em contato <ArrowRight
+            aria-hidden="true"
+            className="size-5 transition-transform duration-300 group-hover:translate-x-1"
+          />
+        </a>
+        <a
+          href="#sobre"
+          aria-label="Saiba mais sobre nossos serviços"
+          class="rounded-full border border-gray-300 px-8 py-4 text-gray-700 transition lg:hover:bg-gray-50"
+        >
+          Saiba Mais
+        </a>
+      </div>
+    </div>
+  </header>
+
+  {/* Seção Quem Somos */}
+  <section id="sobre" class="bg-white py-16" aria-labelledby="sobre-titulo">
+    <div class="container">
+      <h2
+        id="sobre-titulo"
+        class="mb-8 text-center text-3xl font-bold text-gray-900"
+      >
+        Quem Somos
+      </h2>
+      <div class="mx-auto max-w-3xl text-center">
+        <p class="mb-4 text-lg text-gray-700">
+          Somos especialistas em conectar marcas ao público-alvo de forma
+          estratégica e criativa. Nossa equipe trabalha para alavancar o impacto
+          da sua marca no mundo digital.
+        </p>
+        <p class="mb-6 text-lg text-gray-700">
+          Fundada em 2024, a NexusWave nasceu com a missão de transformar a
+          presença digital de empresas através de soluções inovadoras e
+          personalizadas. Combinamos tecnologia, criatividade e estratégia para
+          gerar resultados mensuráveis.
+        </p>
+        <ul
+          aria-label="Nossos diferenciais"
+          class="mt-8 flex flex-wrap justify-center gap-4"
+        >
+          {
+            [
+              "Experiência comprovada",
+              "Atendimento personalizado",
+              "Resultados mensuráveis",
+            ].map((item) => (
+              <li class="flex items-center gap-2 text-brand-500">
+                <CheckCircle2 aria-hidden="true" className="size-5" />
+                <span>{item}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  {/* Seção Nossos Números */}
+  <section aria-labelledby="numeros-titulo" class="bg-white py-16">
+    <div class="container">
+      <h2
+        id="numeros-titulo"
+        class="mb-12 text-center text-3xl font-bold text-gray-900"
+      >
+        Nossos Números
+      </h2>
+      <dl class="grid gap-8 text-center md:grid-cols-2 lg:grid-cols-4">
+        {
+          [
+            {
+              label: "Projetos Concluídos",
+              value: "25+",
+            },
+            {
+              label: "Clientes Felizes",
+              value: "10+",
+            },
+            {
+              label: "Horas Dedicadas",
+              value: "4380",
+            },
+            {
+              label: "Especialistas",
+              value: "27",
+            },
+          ].map((stat) => (
+            <div class="transform transition-transform lg:hover:scale-105">
+              <dt class="sr-only">{stat.label}</dt>
+              <dd class="text-4xl font-bold text-brand-500">{stat.value}</dd>
+              <dd class="mt-2 text-lg text-gray-700">{stat.label}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </section>
+
+  {/* Seção de Serviços */}
+  <section aria-labelledby="servicos-titulo" class="bg-white py-20">
+    <div class="container">
+      <h2
+        id="servicos-titulo"
+        class="mb-16 text-center text-3xl font-bold text-gray-900"
+      >
+        Nossos Serviços
+      </h2>
+      <ul class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {
+          [
+            {
+              icon: <Globe2 aria-hidden="true" className="size-8" />,
+              title: "Marketing Digital",
+              description:
+                "Estratégias personalizadas para atrair e converter seu público-alvo em clientes.",
+            },
+            {
+              icon: <CheckCircle2 aria-hidden="true" className="size-8" />,
+              title: "Identidade Visual e Branding",
+              description:
+                "Criação de marcas memoráveis que se destacam no mercado e conectam com seu público.",
+            },
+            {
+              icon: <MessageSquare aria-hidden="true" className="size-8" />,
+              title: "Criação de Conteúdo Relevante",
+              description:
+                "Conteúdo estratégico que engaja seu público e fortalece a presença digital da sua marca.",
+            },
+          ].map((service, index) => (
+            <li class="rounded-2xl bg-brand-50 p-8 transition lg:hover:bg-brand-100">
+              <div class="mb-4 text-brand-500">{service.icon}</div>
+              <h3 class="mb-4 text-xl font-semibold text-gray-900">
+                {service.title}
+              </h3>
+              <p class="text-gray-600">{service.description}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  {/* Seção de Recursos */}
+  <section
+    aria-labelledby="recursos-titulo"
+    class="bg-gradient-to-b from-white to-brand-50 py-20"
+  >
+    <div class="container">
+      <h2
+        id="recursos-titulo"
+        class="mb-16 text-center text-3xl font-bold text-gray-900"
+      >
+        Por Que Nos Escolher
+      </h2>
+      <ul class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {
+          [
+            {
+              icon: <Rocket aria-hidden="true" className="size-6" />,
+              title: "Entrega Rápida",
+            },
+            {
+              icon: <CheckCircle2 aria-hidden="true" className="size-6" />,
+              title: "Qualidade Garantida",
+            },
+            {
+              icon: <Users2 aria-hidden="true" className="size-6" />,
+              title: "Equipe Especializada",
+            },
+          ].map((feature) => (
+            <li class="flex flex-col items-center justify-center gap-4">
+              <div class="rounded-full bg-brand-100 p-4 text-brand-500">
+                {feature.icon}
+              </div>
+              <h3 class="text-lg font-semibold text-gray-900">
+                {feature.title}
+              </h3>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  {/* Seção de Depoimentos */}
+  <section aria-labelledby="depoimentos-titulo" class="bg-brand-50 py-20">
+    <div class="container">
+      <h2
+        id="depoimentos-titulo"
+        class="mb-16 text-center text-3xl font-bold text-gray-900"
+      >
+        O Que Nossos Clientes Dizem
+      </h2>
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {
+          [
+            {
+              name: "Maria Silva",
+              role: "Diretora de Marketing",
+              testimonial:
+                "A NexusWave transformou completamente nossa presença digital. Estamos impressionados com os resultados obtidos em tão pouco tempo!",
+            },
+            {
+              name: "João Santos",
+              role: "CEO, TechStart",
+              testimonial:
+                "Excelente equipe, comprometida com resultados. Nossa marca agora tem uma identidade visual que realmente nos representa no mercado.",
+            },
+            {
+              name: "Ana Oliveira",
+              role: "Empreendedora",
+              testimonial:
+                "O conteúdo criado pela NexusWave gerou um aumento de 200% no engajamento das nossas redes sociais. Recomendo fortemente!",
+            },
+          ].map((testimonial) => (
+            <article class="rounded-2xl bg-white p-8 shadow-sm transition lg:hover:shadow-md">
+              <header class="mb-6 flex items-center">
+                <div class="mr-4 rounded-full bg-gray-200 p-2 text-gray-600">
+                  <User aria-hidden="true" className="size-10" />
+                </div>
+                <div>
+                  <h3 class="font-semibold text-gray-900">
+                    {testimonial.name}
+                  </h3>
+                  <p class="text-sm text-gray-600">{testimonial.role}</p>
+                </div>
+              </header>
+              <blockquote class="mt-6 border-l-2 border-gray-600 pl-6 text-gray-700 italic">
+                "{testimonial.testimonial}"
+              </blockquote>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  {/* Seção de Contato */}
+  <section aria-labelledby="contato-titulo" class="bg-white py-20">
+    <div class="container">
+      <div class="mx-auto max-w-4xl text-center">
+        <h2 id="contato-titulo" class="mb-8 text-3xl font-bold text-gray-900">
+          Pronto para Começar?
+        </h2>
+        <p class="mb-8 text-gray-600">
+          Entre em contato conosco hoje para discutir seu projeto e ver como
+          podemos ajudar a transformar sua presença digital.
+        </p>
+        <a
+          href="https://wa.me/qr/3DS7V7J4Z32YF1"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Entre em contato conosco via WhatsApp"
+          class="rounded-full bg-brand-500 px-8 py-4 text-white transition lg:hover:bg-brand-400"
+        >
+          Fale Conosco
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {/* Rodapé */}
+  <footer class="bg-gray-50 py-12" role="contentinfo">
+    <div class="container">
+      <div class="flex flex-col items-center justify-between md:flex-row">
+        <div class="mb-4 flex items-center gap-2 md:mb-0">
+          <Globe2 aria-hidden="true" className="size-6 text-brand-500" />
+          <span class="text-xl font-bold text-gray-900">NexusWave</span>
+        </div>
+        <div class="text-center text-sm text-gray-500">
+          © {new Date().getFullYear()} NexusWave. Todos os direitos reservados.
+        </div>
+      </div>
+    </div>
+  </footer>
 </Layout>
