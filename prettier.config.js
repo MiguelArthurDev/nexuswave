@@ -10,6 +10,7 @@ export default {
     "@ianvs/prettier-plugin-sort-imports",
     "prettier-plugin-tailwindcss",
   ],
+  tailwindStylesheet: "./src/styles/global.css",
   importOrder: ["<THIRD_PARTY_MODULES>", "", "^~/", "", "^[.]"],
   importOrderParserPlugins: ["typescript", "jsx", "decorators-legacy"],
   importOrderTypeScriptVersion: "5.0.0",
