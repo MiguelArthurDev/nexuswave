@@ -76,15 +76,19 @@ import logo from "~/images/logo.png";
 
   <main>
     {/* Seção Quem Somos */}
-    <section id="sobre" class="bg-white py-16" aria-labelledby="sobre-titulo">
+    <section
+      id="sobre"
+      class="scroll-section bg-white py-16"
+      aria-labelledby="sobre-titulo"
+    >
       <div class="container">
         <h2
           id="sobre-titulo"
-          class="mb-8 text-center text-3xl font-bold text-gray-900"
+          class="fade-in-up mb-8 text-center text-3xl font-bold text-gray-900"
         >
           Quem Somos
         </h2>
-        <div class="mx-auto max-w-3xl text-center">
+        <div class="fade-in-up mx-auto max-w-3xl text-center" data-delay="0.2">
           <p class="mb-4 text-lg text-gray-700">
             Somos especialistas em conectar marcas ao público-alvo de forma
             estratégica e criativa. Nossa equipe trabalha para alavancar o
@@ -118,11 +122,14 @@ import logo from "~/images/logo.png";
     </section>
 
     {/* Seção Nossos Números */}
-    <section aria-labelledby="numeros-titulo" class="bg-white py-16">
+    <section
+      aria-labelledby="numeros-titulo"
+      class="scroll-section bg-white py-16"
+    >
       <div class="container">
         <h2
           id="numeros-titulo"
-          class="mb-12 text-center text-3xl font-bold text-gray-900"
+          class="fade-in-up mb-12 text-center text-3xl font-bold text-gray-900"
         >
           Nossos Números
         </h2>
@@ -145,8 +152,11 @@ import logo from "~/images/logo.png";
                 label: "Especialistas",
                 value: "27",
               },
-            ].map((stat) => (
-              <div class="transform transition-transform lg:hover:scale-105">
+            ].map((stat, index) => (
+              <div
+                class="fade-in-up transform transition-transform lg:hover:scale-105"
+                data-delay={0.2 + index * 0.1}
+              >
                 <dt class="sr-only">{stat.label}</dt>
                 <dd class="text-4xl font-bold text-brand-500">{stat.value}</dd>
                 <dd class="mt-2 text-lg text-gray-700">{stat.label}</dd>
@@ -158,11 +168,14 @@ import logo from "~/images/logo.png";
     </section>
 
     {/* Seção de Serviços */}
-    <section aria-labelledby="servicos-titulo" class="bg-white py-20">
+    <section
+      aria-labelledby="servicos-titulo"
+      class="scroll-section bg-white py-20"
+    >
       <div class="container">
         <h2
           id="servicos-titulo"
-          class="mb-16 text-center text-3xl font-bold text-gray-900"
+          class="fade-in-up mb-16 text-center text-3xl font-bold text-gray-900"
         >
           Nossos Serviços
         </h2>
@@ -188,7 +201,10 @@ import logo from "~/images/logo.png";
                   "Conteúdo estratégico que engaja seu público e fortalece a presença digital da sua marca.",
               },
             ].map((service, index) => (
-              <li class="rounded-2xl bg-brand-50 p-8 transition lg:hover:bg-brand-100">
+              <li
+                class="fade-in-up rounded-2xl bg-brand-50 p-8 transition lg:hover:bg-brand-100"
+                data-delay={0.2 + index * 0.15}
+              >
                 <div class="mb-4 text-brand-500">{service.icon}</div>
                 <h3 class="mb-4 text-xl font-semibold text-gray-900">
                   {service.title}
@@ -204,12 +220,12 @@ import logo from "~/images/logo.png";
     {/* Seção de Recursos */}
     <section
       aria-labelledby="recursos-titulo"
-      class="bg-gradient-to-b from-white to-brand-50 py-20"
+      class="scroll-section bg-gradient-to-b from-white to-brand-50 py-20"
     >
       <div class="container">
         <h2
           id="recursos-titulo"
-          class="mb-16 text-center text-3xl font-bold text-gray-900"
+          class="fade-in-up mb-16 text-center text-3xl font-bold text-gray-900"
         >
           Por Que Nos Escolher
         </h2>
@@ -228,8 +244,11 @@ import logo from "~/images/logo.png";
                 icon: <Users2 aria-hidden="true" className="size-6" />,
                 title: "Equipe Especializada",
               },
-            ].map((feature) => (
-              <li class="flex flex-col items-center justify-center gap-4">
+            ].map((feature, index) => (
+              <li
+                class="fade-in-up flex flex-col items-center justify-center gap-4"
+                data-delay={0.2 + index * 0.15}
+              >
                 <div class="rounded-full bg-brand-100 p-4 text-brand-500">
                   {feature.icon}
                 </div>
@@ -244,11 +263,14 @@ import logo from "~/images/logo.png";
     </section>
 
     {/* Seção de Depoimentos */}
-    <section aria-labelledby="depoimentos-titulo" class="bg-brand-50 py-20">
+    <section
+      aria-labelledby="depoimentos-titulo"
+      class="scroll-section bg-brand-50 py-20"
+    >
       <div class="container">
         <h2
           id="depoimentos-titulo"
-          class="mb-16 text-center text-3xl font-bold text-gray-900"
+          class="fade-in-up mb-16 text-center text-3xl font-bold text-gray-900"
         >
           O Que Nossos Clientes Dizem
         </h2>
@@ -273,8 +295,11 @@ import logo from "~/images/logo.png";
                 testimonial:
                   "O conteúdo criado pela NexusWave gerou um aumento de 200% no engajamento das nossas redes sociais. Recomendo fortemente!",
               },
-            ].map((testimonial) => (
-              <article class="rounded-2xl bg-white p-8 shadow-sm transition lg:hover:shadow-md">
+            ].map((testimonial, index) => (
+              <article
+                class="fade-in-up rounded-2xl bg-white p-8 shadow-sm transition lg:hover:shadow-md"
+                data-delay={0.2 + index * 0.15}
+              >
                 <header class="mb-6 flex items-center">
                   <div class="mr-4 rounded-full bg-gray-200 p-2 text-gray-600">
                     <User aria-hidden="true" className="size-10" />
@@ -297,13 +322,19 @@ import logo from "~/images/logo.png";
     </section>
 
     {/* Seção de Contato */}
-    <section aria-labelledby="contato-titulo" class="bg-white py-20">
+    <section
+      aria-labelledby="contato-titulo"
+      class="scroll-section bg-white py-20"
+    >
       <div class="container">
         <div class="mx-auto max-w-4xl text-center">
-          <h2 id="contato-titulo" class="mb-8 text-3xl font-bold text-gray-900">
+          <h2
+            id="contato-titulo"
+            class="fade-in-up mb-8 text-3xl font-bold text-gray-900"
+          >
             Pronto para Começar?
           </h2>
-          <p class="mb-8 text-gray-600">
+          <p class="fade-in-up mb-8 text-gray-600" data-delay="0.2">
             Entre em contato conosco hoje para discutir seu projeto e ver como
             podemos ajudar a transformar sua presença digital.
           </p>
@@ -312,7 +343,8 @@ import logo from "~/images/logo.png";
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Entre em contato conosco via WhatsApp"
-            class="rounded-full bg-brand-500 px-8 py-4 text-white transition lg:hover:bg-brand-400"
+            class="fade-in-up rounded-full bg-brand-500 px-8 py-4 text-white transition lg:hover:bg-brand-400"
+            data-delay="0.3"
           >
             Fale Conosco
           </a>
@@ -335,4 +367,49 @@ import logo from "~/images/logo.png";
       </div>
     </div>
   </footer>
+
+  <script>
+    import gsap from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.addEventListener("DOMContentLoaded", () => {
+      gsap.set(".fade-in-up", {
+        y: 50,
+        opacity: 0,
+      });
+
+      document.querySelectorAll(".scroll-section").forEach((section) => {
+        const elements = section.querySelectorAll(".fade-in-up");
+
+        elements.forEach((element) => {
+          const htmlElement = element as HTMLElement;
+          const delayValue = htmlElement.dataset.delay
+            ? parseFloat(htmlElement.dataset.delay)
+            : 0;
+
+          gsap.to(element, {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            delay: delayValue,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: element,
+              start: "top 95%",
+              toggleActions: "play none none none",
+              once: true,
+            },
+          });
+        });
+      });
+    });
+  </script>
 </Layout>
+
+<style>
+  .fade-in-up {
+    will-change: transform, opacity;
+  }
+</style>
