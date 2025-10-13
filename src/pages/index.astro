@@ -11,11 +11,16 @@ import {
 } from "lucide-react";
 
 import Layout from "~/components/layout.astro";
+
 import logo from "~/images/logo.png";
 import logoMambaAcai from "~/images/mamba_acai.png";
 import logoNobreBurguer from "~/images/nobre_burguer.png";
 import logoSupremusAcai from "~/images/supremus_acai.png";
 import logoWavana from "~/images/wavana.png";
+
+import Levi from "~/images/Levi.jpg"
+import Miguel from "~/images/Miguel.jpg"
+import Hugo from "~/images/Hugo.jpg"
 ---
 
 <Layout
@@ -365,6 +370,66 @@ import logoWavana from "~/images/wavana.png";
         </div>
       </div>
     </section>
+
+    {/* Seção dos Sócios */}
+    <section
+      aria-labelledby="socios-titulo"
+      class="scroll-section bg-white py-20"
+    >
+      <div class="container">
+        <h2
+          id="socios-titulo"
+          class="fade-in-up mb-16 text-center text-3xl font-bold text-gray-900"
+        >
+          Conheça os sócios que fundaram a Nexus Wave e lideram nossos projetos.
+        </h2>
+
+        <ul class="grid gap-12 md:grid-cols-2 lg:grid-cols-3 place-items-center">
+          {
+            [
+              {
+                nome: "Levi Gabriel",
+                cargo: "Videomaker e Produtor",
+                descricao:
+                  "Um dos fundadores da Nexus Wave, Levi é especializado em vídeomarketing e produção de conteúdo, unindo criatividade e estratégia para transformar ideias em histórias visuais autênticas e impactantes. Atua em todas as etapas — da criação de roteiro à captação e pós-produção — desenvolvendo vídeos para marcas, eventos e criadores de conteúdo que buscam conectar pessoas, fortalecer sua presença digital e gerar resultados reais.",
+                imagem: Levi,
+              },
+              {
+                nome: "Miguel",
+                cargo: "Co-Fundador e Gestor de Projetos",
+                descricao:
+                  "Um dos fundadores da Nexus Wave, Miguel é especializado em todo o ecossistema de vendas, atuando de forma estratégica em cada etapa — da captação e nutrição de leads até o fechamento e fidelização de clientes. Com uma visão voltada para crescimento e performance, é responsável pela construção de funis de vendas, planejamento digital e gestão de mídias pagas, assegurando que cada estratégia entregue resultados consistentes, escaláveis e alinhados aos objetivos de negócio.",
+                imagem: Miguel,
+              },
+              {
+                nome: "Hugo Santiago",
+                cargo: "Diretor de Arte e Social Media",
+                descricao:
+                  "Um dos fundadores da Nexus Wave, Hugo é especializado em direção de arte e produção de conteúdo estratégico, unindo estética, propósito e resultado. Atua no desenvolvimento de identidades visuais, diretrizes criativas e estratégias de comunicação voltadas para o posicionamento e fortalecimento de marcas no ambiente digital. Responsável por transformar ideias em conceitos visuais consistentes e impactantes, Hugo garante coerência, relevância e conexão em cada ponto de contato entre marca e público",
+                imagem: Hugo,
+              },
+            ].map((socio, index) => (
+              <li
+                class="fade-in-up flex flex-col items-center text-center rounded-2xl bg-brand-50 p-8 shadow-sm transition-transform duration-300 hover:scale-105 hover:shadow-md"
+                data-delay={0.2 + index * 0.15}
+              >
+                <Image
+                  src={socio.imagem}
+                  alt={`Foto de ${socio.nome}`}
+                  class="mb-6 h-48 w-48 rounded-full object-cover shadow-md"
+                />
+                <h3 class="text-xl font-semibold text-gray-900">{socio.nome}</h3>
+                <p class="text-brand-600 mb-4 font-medium">{socio.cargo}</p>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                  {socio.descricao}
+                </p>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
 
     {/* Seção de Contato */}
     <section
