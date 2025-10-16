@@ -17,6 +17,7 @@ import logoMambaAcai from "~/images/mamba_acai.png";
 import logoNobreBurguer from "~/images/nobre_burguer.png";
 import logoSupremusAcai from "~/images/supremus_acai.png";
 import logoWavana from "~/images/wavana.png";
+import Sanart from "~/images/Sanart.png";
 
 import Levi from "~/images/Levi.jpg"
 import Miguel from "~/images/Miguel.jpg"
@@ -244,28 +245,34 @@ import Hugo from "~/images/Hugo.jpg"
         </h2>
 
         <ul class="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-4 place-items-center">
-          {
-            [
-              { src: logoMambaAcai, alt: "Logo da Mamba Açaí" },
-              { src: logoNobreBurguer, alt: "Logo da Nobre Burguer" },
-              { src: logoSupremusAcai, alt: "Logo da Supremus Açaí" },
-              { src: logoWavana, alt: "Logo da Wavana" },
-            ].map((cliente, index) => (
-              <li
-                class="fade-in-up flex flex-col items-center justify-center transition-transform duration-300 hover:scale-105"
-                data-delay={0.2 + index * 0.15}
-              >
-                <figure class="flex flex-col items-center">
-                  <Image
-                    src={cliente.src}
-                    alt={cliente.alt}
-                    class="h-64 w-auto object-contain grayscale hover:grayscale-0 transition"
-                  />
-                  <figcaption class="mt-4 text-sm text-gray-500">{cliente.alt.replace("Logo da ", "")}</figcaption>
-                </figure>
-              </li>
-            ))
-          }
+          {[
+            { src: logoMambaAcai, alt: "Logo da Mamba Açaí" },
+            { src: logoNobreBurguer, alt: "Logo da Nobre Burguer" },
+            { src: logoSupremusAcai, alt: "Logo da Supremus Açaí" },
+            { src: logoWavana, alt: "Logo da Wavana" },
+            { src: Sanart, alt: "Logo da Sanart" },
+          ].map((cliente, index) => (
+            <li
+              key={index}
+              class="fade-in-up flex flex-col items-center justify-center transition-transform duration-300 hover:scale-105"
+              data-delay={0.2 + index * 0.15}
+            >
+              <figure class="flex flex-col items-center">
+                <Image
+                  src={cliente.src}
+                  alt={cliente.alt}
+                  class={`transition grayscale hover:grayscale-0 ${
+                    cliente.alt.includes("Sanart")
+                      ? "rounded-full object-cover h-28 w-28 sm:h-40 sm:w-40 md:h-48 md:w-48 lg:h-64 lg:w-64"
+                      : "object-contain h-24 sm:h-36 md:h-48 lg:h-64 w-auto"
+                  }`}
+                />
+                <figcaption class="mt-4 text-sm text-gray-500">
+                  {cliente.alt.replace("Logo da ", "")}
+                </figcaption>
+              </figure>
+            </li>
+          ))}
         </ul>
       </div>
     </section>
