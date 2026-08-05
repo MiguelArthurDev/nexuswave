@@ -15,12 +15,12 @@
     "@tailwindcss/vite": "^4.1.4",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
-    "astro": "^5.7.0",
+    "astro": "^7.1.6",
     "gsap": "^3.13.0",
     "lucide-react": "^0.488.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "sharp": "^0.34.1",
+    "sharp": "^0.35.3",
     "tailwindcss": "^4.1.4"
   },
   "devDependencies": {
